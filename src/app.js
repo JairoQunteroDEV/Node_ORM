@@ -1,9 +1,9 @@
 import express from "express";
-
+import projectRoutes from "./routes/projects.routes.js";
 const app = express()
 
-app.use("/",(req,res)=>{
-    res.send("hola mundo")
-})
+app.use(express.json())
+
+app.use(projectRoutes)
 
 export default app;

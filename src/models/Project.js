@@ -15,7 +15,7 @@ export const Project = sequelize.define('project', {
         type: DataTypes.INTEGER,
     },
     description: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
     },
 }, {
     timestamps: true
