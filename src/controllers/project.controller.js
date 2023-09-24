@@ -40,12 +40,9 @@ export const deleteProject = async (req, res) => {
 export const updateProject = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, priority, description } = req.body;
 
         const project = await Project.findByPk(id)
-        project.name = name;
-        project.priority = priority;
-        project.description = description;
+        project.set(req.body)
 
         await project.save()
         res.status(200).json(project)
